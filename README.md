@@ -82,7 +82,7 @@ See the full list of everyone who made this project better in [CONTRIBUTORS.md](
 When your context fills up and you run `/clear`, this skill **automatically recovers** your previous session.
 
 **How it works:**
-1. Checks for previous session data in `~/.claude/projects/`
+1. Checks for previous session data in the active IDE's session store (`~/.claude/projects/` for Claude Code, `~/.codex/sessions/` for Codex)
 2. Finds when planning files were last updated
 3. Extracts conversation that happened after (potentially lost context)
 4. Shows a catchup report so you can sync

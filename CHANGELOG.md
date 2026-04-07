@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+### Fixed
+
+- **Codex session catchup** — `session-catchup.py` now reads Codex rollout JSONL from `~/.codex/sessions`, prefers `CODEX_THREAD_ID` when skipping the current thread, filters subagent and tiny sessions, and detects planning-file updates from structured Codex `patch_apply_end` events.
+
 ## [2.29.0] - 2026-03-24
 
 ### Added
