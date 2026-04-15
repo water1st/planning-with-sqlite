@@ -25,12 +25,13 @@ These amazing people have contributed code, documentation, or significant improv
   - Created workflow diagram showing task lifecycle
   - **Impact:** Dramatically improved beginner onboarding
 
-- **[@lasmarois](https://github.com/lasmarois)** - [PR #33](https://github.com/OthmanAdi/planning-with-files/pull/33)
+- **[@lasmarois](https://github.com/lasmarois)** - [PR #33](https://github.com/OthmanAdi/planning-with-files/pull/33), [PR #37](https://github.com/OthmanAdi/planning-with-files/pull/37)
   - Created session recovery feature for context preservation after `/clear`
   - Built `session-catchup.py` script to analyze previous session JSONL files
   - Enhanced PreToolUse hook to include Read/Glob/Grep operations
-  - Restructured SKILL.md for better session recovery workflow
-  - **Impact:** Solves context loss problem, enables seamless work resumption
+  - Restructured SKILL.md for better session recovery workflow (PR #33)
+  - Extended catchup scanning to all sessions, not just the most recent one (PR #37)
+  - **Impact:** Solves context loss problem, enables seamless work resumption across any session
 
 - **[@aimasteracc](https://github.com/aimasteracc)** - [PR #30](https://github.com/OthmanAdi/planning-with-files/pull/30)
   - Added Kilocode IDE support and documentation
@@ -96,6 +97,21 @@ These amazing people have contributed code, documentation, or significant improv
   - **Impact:** Brings session recovery parity to Codex users
 
 ### Other Contributors
+
+- **[@Leon-Algo](https://github.com/Leon-Algo)** - [PR #119](https://github.com/OthmanAdi/planning-with-files/pull/119), [PR #120](https://github.com/OthmanAdi/planning-with-files/pull/120), [PR #122](https://github.com/OthmanAdi/planning-with-files/pull/122)
+  - Made planning scripts executable in `.codex` skill install, fixing Codex installer breakage (PR #119)
+  - Added official Codex hooks.json integration with full lifecycle hooks — SessionStart, UserPromptSubmit, PreToolUse, PostToolUse, Stop — bringing Codex to full hook parity with other IDEs (PR #120)
+  - Fixed canonical script execute bits for `check-complete.sh` and `init-session.sh` with regression test (PR #122)
+  - **Impact:** Codex users now get the same automatic context injection and lifecycle automation as Claude Code and Cursor users
+
+- **[@YSAA1](https://github.com/YSAA1)** - [PR #109](https://github.com/OthmanAdi/planning-with-files/pull/109)
+  - Fixed Codex session-catchup fallback that was silently broken after the session path changes
+
+- **[@kevinaimonster](https://github.com/kevinaimonster)** - [PR #108](https://github.com/OthmanAdi/planning-with-files/pull/108)
+  - Added Simplified Chinese localization support, extending the skill to Chinese-language users
+
+- **[@wd041216-bit](https://github.com/wd041216-bit)** - [PR #107](https://github.com/OthmanAdi/planning-with-files/pull/107)
+  - Added openclaw-github-repo-commander to the Community Built section, expanding the ecosystem showcase
 
 - **[@popey](https://github.com/popey)** - [PR #83](https://github.com/OthmanAdi/planning-with-files/pull/83)
   - Fixed `allowed-tools` YAML list (invalid per Anthropic skill spec, silently killing discoverability)
@@ -198,6 +214,6 @@ If you've contributed and don't see your name here, please open an issue! We wan
 
 ---
 
-**Total Contributors:** 28+ and growing!
+**Total Contributors:** 32+ and growing!
 
-*Last updated: April 8, 2026*
+*Last updated: April 15, 2026*

@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.34.0] - 2026-04-15
+
+### Added
+
+- **Codex hooks restored** (closes #132) — `.codex/hooks.json` and `.codex/hooks/` scripts are back. Codex users now get the same full lifecycle hook automation as Claude Code, Cursor, and Copilot users: SessionStart runs session catchup and injects plan context; UserPromptSubmit re-injects on every message; PreToolUse re-reads task_plan.md before Bash; PostToolUse reminds the agent to update progress.md; Stop blocks when phases are incomplete then re-prompts. These files were present in v2.31.0 (PR #120 by @Leon-Algo) but were accidentally wiped when master was rewritten during v2.32.0 — now fully restored.
+- **Codex hook regression test** (`tests/test_codex_hooks.py`) — 4 test cases covering hooks.json structure, SessionStart context injection, PreToolUse systemMessage emission, PostToolUse progress reminder, and Stop block-then-allow behavior
+- **Tessl skill-review-and-optimize CI** (PR #131 by @popey) — `.github/workflows/skill-review.yml` runs on every PR that touches a SKILL.md, posts scores and AI-suggested improvements as a PR comment; `.github/workflows/skill-optimize-apply.yml` lets contributors type `/apply-optimize` to commit the suggestions directly. Non-blocking by default.
+
+### Fixed
+
+- **Canonical shell scripts not executable** (PR #122 by @Leon-Algo) — `skills/planning-with-files/scripts/check-complete.sh` and `init-session.sh` were tracked as `100644` instead of `100755`, breaking Codex and any Unix installer that depends on the executable bit. Fixed to `100755`. Regression test added.
+- **Duplicate `version:` key in Codex SKILL.md** — `.codex/skills/planning-with-files/SKILL.md` had two `version: "2.33.0"` entries in the metadata block (same bug fixed for zh/zht in a previous commit but missed here). Deduplicated.
+- **Codex docs updated** — `docs/codex.md` rewritten to cover both skills and hooks installation, hooks protocol explanation, workspace vs personal install, and troubleshooting for duplicate hook messages and Windows limitations.
+
+### Changed
+
+- **CONTRIBUTORS.md updated** — Added @Leon-Algo (PRs #119, #120, #122), @YSAA1 (PR #109), @kevinaimonster (PR #108), @wd041216-bit (PR #107); updated @lasmarois entry to include PR #37; bumped total count to 32+
+
+### Thanks
+
+- @Leon-Algo for the Codex hooks design, three separate fix PRs, and patience while the master rewrite wiped his work (PR #119, #120, #122)
+- @popey (Alan Pope) for the Tessl CI workflow (PR #131)
+
 ## [2.33.0] - 2026-04-09
 
 ### Added
