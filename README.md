@@ -129,4 +129,4 @@ Contributions are welcome! Please:
 
 ## License
 
-Apache License 2.0 — feel free to use, modify, and distribute.
+MIT — feel free to use, modify, and distribute.
