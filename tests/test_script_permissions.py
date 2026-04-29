@@ -9,6 +9,9 @@ SCRIPTS_DIR = REPO_ROOT / "skills" / "planning-with-files" / "scripts"
 
 class CanonicalScriptPermissionsTests(unittest.TestCase):
     def assert_executable(self, path: Path) -> None:
+        import os
+        if os.name == 'nt':
+            return
         mode = path.stat().st_mode
         self.assertTrue(
             mode & stat.S_IXUSR,

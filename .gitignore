@@ -27,6 +27,17 @@ clawhub-upload/
 clawhub-changelog.txt
 skill-submission-targets.txt
 
+# SQLite databases
+planning.db
+test_planning.db
+*.sqlite
+*.sqlite3
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
 # Claude session files
 .claude/
 
@@ -35,3 +46,8 @@ skill-submission-targets.txt
 *.tmp
 WIKI_HOME_PAGE.md
 DISCUSSION_2_CONTENT.md
+
+# Ignored python scripts
+scripts/check_complete.py
+scripts/init_db.py
+tests/test_sqlite_migration.py

@@ -26,6 +26,10 @@ hooks_module = importlib.import_module("planning_with_files_plugin.hooks")
 
 
 class HermesAdapterTests(unittest.TestCase):
+    def setUp(self) -> None:
+        if shutil.which("sh") is None:
+            self.skipTest("sh executable not found in PATH")
+
     def test_init_creates_default_files(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             result = json.loads(tools_module.planning_with_files_init(cwd=tmpdir))

@@ -1,12 +1,10 @@
 ---
-description: "Start Manus-style file-based planning. Creates task_plan.md, findings.md, progress.md for complex tasks."
+description: "Start Manus-style SQLite-based planning. Initializes a local planning.db for complex tasks."
 ---
 
-Invoke the planning-with-files:planning-with-files skill and follow it exactly as presented to you.
+Invoke the planning-with-sqlite:planning-with-sqlite skill and follow it exactly as presented to you.
 
-Create the three planning files in the current project directory if they don't exist:
-- task_plan.md — for phases, progress, and decisions
-- findings.md — for research and discoveries
-- progress.md — for session logging
+Initialize the local SQLite database (`planning.db`) in the current project directory if it doesn't exist.
 
-Then guide the user through the planning workflow.
+Then guide the user through the planning workflow using MCP SQL tools or SQLite CLI to create initial tasks and phases in the database.
+

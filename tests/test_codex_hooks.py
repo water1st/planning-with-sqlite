@@ -5,6 +5,7 @@ import sys
 import tempfile
 import textwrap
 import unittest
+import shutil
 from pathlib import Path
 
 
@@ -15,6 +16,10 @@ HOOKS_DIR = CODEX_ROOT / "hooks"
 
 
 class CodexHooksTests(unittest.TestCase):
+    def setUp(self) -> None:
+        if shutil.which("sh") is None:
+            self.skipTest("sh executable not found in PATH")
+
     def run_python_hook(self, script_name: str, payload: dict, cwd: Path) -> subprocess.CompletedProcess[str]:
         return subprocess.run(
             [sys.executable, str(HOOKS_DIR / script_name)],
