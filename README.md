@@ -2,9 +2,12 @@
 <img src="media/banner.png" alt="planning-with-files" width="100%">
 </div>
 
-# Planning with Files
+# Planning with SQLite
 
-> **Work like Manus** — the AI agent company Meta acquired for **$2 billion**.
+> SQLite-powered task planning for Claude Code — a persistent, queryable alternative to planning-with-files.
+
+> ⚠️ Work in progress — currently still the original planning-with-files implementation.
+
 
 [![Benchmark](https://img.shields.io/badge/Benchmark-96.7%25_pass_rate-brightgreen)](docs/evals.md)
 [![A/B Verified](https://img.shields.io/badge/A%2FB_Blind-3%2F3_wins-brightgreen)](docs/evals.md)
